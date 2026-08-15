@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry, Samiha 🥺</title>
+<style>
+*{box-sizing:border-box}
+html,body{
+  margin:0;width:100%;height:100%;overflow:hidden;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:#090713;color:#fff;
+}
+body:before{
+  content:"";position:fixed;inset:-20%;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,115,165,.18),transparent 30%),
+    radial-gradient(circle at 80% 30%,rgba(120,100,255,.14),transparent 30%),
+    radial-gradient(circle at 50% 90%,rgba(255,100,150,.12),transparent 30%);
+  filter:blur(35px);animation:glow 10s ease-in-out infinite alternate;
+}
+@keyframes glow{to{transform:scale(1.12);opacity:1}}
+
+#sorryField,#flowers,#doraemonBits{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+.sorry{
+  position:absolute;white-space:nowrap;font-weight:700;letter-spacing:.4px;
+  text-shadow:0 0 18px currentColor;
+  animation:move linear infinite;
+}
+@keyframes move{
+  0%{transform:translate3d(-25vw,0,0) rotate(var(--r));opacity:0}
+  8%{opacity:var(--o)}92%{opacity:var(--o)}
+  100%{transform:translate3d(120vw,0,0) rotate(var(--r));opacity:0}
+}
+
+.flower{
+  position:absolute;font-size:20px;opacity:.5;
+  filter:drop-shadow(0 0 8px rgba(255,190,220,.4));
+  animation:fall linear infinite;
+}
+@keyframes fall{
+  0%{transform:translateY(-12vh) rotate(0deg);opacity:0}
+  12%{opacity:.55}88%{opacity:.55}
+  100%{transform:translateY(115vh) translateX(var(--x)) rotate(360deg);opacity:0}
+}
+.dora{
+  position:absolute;font-size:22px;opacity:.2;
+  animation:floatD ease-in-out infinite alternate;
+}
+@keyframes floatD{to{transform:translateY(-18px) rotate(6deg);opacity:.38}}
+
+.center{
+  position:relative;z-index:5;min-height:100vh;
+  display:grid;place-items:center;padding:22px;
+}
+.card{
+  width:min(530px,92vw);padding:38px 28px;text-align:center;
+  border:1px solid rgba(255,255,255,.13);border-radius:28px;
+  background:rgba(14,11,23,.66);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  box-shadow:0 25px 90px rgba(0,0,0,.45);
+}
+.mini{
+  font-size:.72rem;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,255,255,.48);margin-bottom:12px;
+}
+h1{
+  margin:0;
+  font-size:clamp(2.4rem,9vw,4.5rem);
+  line-height:.95;
+  background:linear-gradient(90deg,#fff,#ffb7d2,#d8c8ff,#fff);
+  background-size:250% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:shine 5s linear infinite;
+}
+@keyframes shine{to{background-position:250% center}}
+
+.message{
+  margin:22px auto 0;max-width:430px;
+  color:rgba(255,255,255,.8);font-size:.98rem;line-height:1.65;
+}
+.message b{color:#ffc3d8}
+.ek{
+  margin:18px auto 0;font-weight:700;font-size:1.05rem;
+  color:#e7dcff;min-height:30px;
+}
+.ek span{
+  display:inline-block;animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{50%{transform:scale(1.07);text-shadow:0 0 18px #d6bfff}}
+
+.buttons{
+  margin-top:25px;display:flex;justify-content:center;
+  gap:10px;flex-wrap:wrap;
+}
+button{
+  border:0;border-radius:999px;padding:11px 19px;
+  font:inherit;font-weight:700;cursor:pointer;transition:.25s;
+}
+button:hover{transform:translateY(-2px) scale(1.03)}
+#musicBtn{
+  color:#fff;background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.14);
+}
+#forgiveBtn{
+  color:#21101a;background:#ffc1d7;
+  box-shadow:0 8px 28px rgba(255,130,175,.2);
+}
+#answer{
+  min-height:25px;margin-top:17px;color:#ffc1d7;
+  font-size:.88rem;opacity:0;transition:.4s;
+}
+#answer.show{opacity:1}
+.note{
+  margin-top:14px;font-size:.68rem;color:rgba(255,255,255,.3)
+}
+.heart{
+  position:fixed;z-index:20;pointer-events:none;font-size:18px;
+  animation:pop 1.5s ease-out forwards;
+}
+@keyframes pop{
+  0%{transform:translate(0,0) scale(.3);opacity:0}
+  15%{opacity:1}100%{transform:translate(var(--x),var(--y)) scale(1.4);opacity:0}
+}
+.title-text {
+  background: linear-gradient(90deg,#fff,#ffb7d2,#d8c8ff,#fff);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sad-face {
+  color: #d8c8ff !important;
+  -webkit-text-fill-color: #d8c8ff !important;
+  background: none !important;
+  display: inline-block;
+  font-size: .65em;
+  vertical-align: middle;
+}
+</style>
+</head>
+<body>
+
+<div id="sorryField"></div>
+<div id="flowers"></div>
+<div id="doraemonBits"></div>
+
+<main class="center">
+  <section class="card">
+    <div class="mini">a tiny apology for u, madam</div>
+    <h1><span class="title-text">I'm sorry.</span> <span class="sad-face">☹</span></h1><br>
+
+    <div class="message">
+      I’m so sorry if it felt like I was <b>flirting</b> or buttering you up.
+      I genuinely meant what I said. You really are pretty, so…
+      <b>blame me for noticing.</b> 🥲
+    </div>
+
+    <div class="ek">
+      <span id="ektu">ektu ektu…</span>
+    </div>
+
+    <div class="buttons">
+      <button id="musicBtn">♫ Play something</button>
+      <button id="forgiveBtn">Okay… am I forgiven? 🥺</button>
+    </div>
+
+    <div id="answer"></div>
+    <div class="note">yes, I made an entire webpage just to say sorry 😭</div>
+  </section>
+</main>
+
+<audio id="music" src="music.mp3" loop preload="auto"></audio>
+
+<script>
+const sorryField=document.getElementById("sorryField");
+const flowers=document.getElementById("flowers");
+const doraemonBits=document.getElementById("doraemonBits");
+const music=document.getElementById("music");
+const musicBtn=document.getElementById("musicBtn");
+const forgiveBtn=document.getElementById("forgiveBtn");
+const answer=document.getElementById("answer");
+const ektu=document.getElementById("ektu");
+
+const words=["sorry","Sorry","so sorry","I'm sorry","sorry 🥺","sorry...","really sorry","okay, sorry"];
+const colors=["#ffb7d2","#d8c8ff","#ffffff","#ff8fba","#cbb8ff"];
+
+for(let i=0;i<58;i++){
+  const el=document.createElement("span");
+  el.className="sorry";
+  el.textContent=words[Math.floor(Math.random()*words.length)];
+  const duration=9+Math.random()*18;
+  el.style.left=(Math.random()*100-20)+"vw";
+  el.style.top=Math.random()*100+"%";
+  el.style.fontSize=(12+Math.random()*27)+"px";
+  el.style.color=colors[Math.floor(Math.random()*colors.length)];
+  el.style.setProperty("--o",.12+Math.random()*.38);
+  el.style.setProperty("--r",(-8+Math.random()*16)+"deg");
+  el.style.animationDuration=duration+"s";
+  el.style.animationDelay=(-Math.random()*duration)+"s";
+  sorryField.appendChild(el);
+}
+
+for(let i=0;i<14;i++){
+  const f=document.createElement("div");
+  f.className="flower";
+  f.textContent="🌸";
+  f.style.left=Math.random()*100+"%";
+  f.style.fontSize=(14+Math.random()*18)+"px";
+  f.style.animationDuration=(10+Math.random()*12)+"s";
+  f.style.animationDelay=(-Math.random()*18)+"s";
+  f.style.setProperty("--x",(-80+Math.random()*160)+"px");
+  flowers.appendChild(f);
+}
+
+for(let i=0;i<7;i++){
+  const d=document.createElement("div");
+  d.className="dora";
+  d.textContent="🔵";
+  d.style.left=(5+Math.random()*90)+"%";
+  d.style.top=(8+Math.random()*84)+"%";
+  d.style.animationDuration=(3+Math.random()*4)+"s";
+  d.style.animationDelay=(-Math.random()*4)+"s";
+  doraemonBits.appendChild(d);
+}
+
+const lines=["ektu ektu…","ektu beshi…","beshi beshi. 😭"];
+let index=0;
+setInterval(()=>{
+  index=(index+1)%lines.length;
+  ektu.style.opacity="0";
+  setTimeout(()=>{
+    ektu.textContent=lines[index];
+    ektu.style.opacity="1";
+  },250);
+},2200);
+
+musicBtn.addEventListener("click",async()=>{
+  try{
+    if(music.paused){
+      await music.play();
+      musicBtn.textContent="♫ Music on";
+    }else{
+      music.pause();
+      musicBtn.textContent="♫ Play something";
+    }
+  }catch(e){
+    musicBtn.textContent="Add music.mp3 first";
+  }
+});
+
+forgiveBtn.addEventListener("click",()=>{
+  answer.textContent="Maybe attachment is the root of connection....";
+  answer.classList.add("show");
+  forgiveBtn.textContent="Thank you 😭";
+
+  for(let i=0;i<22;i++){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.textContent=["♥","♡","🥺","✨","🌸"][Math.floor(Math.random()*5)];
+    h.style.left=(43+Math.random()*14)+"vw";
+    h.style.top=(45+Math.random()*10)+"vh";
+    h.style.setProperty("--x",(-140+Math.random()*280)+"px");
+    h.style.setProperty("--y",(-100-Math.random()*230)+"px");
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),1500);
+  }
+});
+</script>
+</body>
+</html>
